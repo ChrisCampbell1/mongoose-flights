@@ -3,12 +3,11 @@
 
 <main>
   <h1><%= title %></h1>
-  <table>
+  <table id="list">
     <thead>
       <tr>
-        <th>Remove Flight</th>
-        <th>Airline</th>
-        <th>Airport</th>
+        <th></th>
+        <th></th>
         <th>Flight Number</th>
         <th>Depature Date</th>
       </tr>
@@ -21,10 +20,9 @@
               <button type="submit">Delete</button>
             </form>
           </td>
-          <td><%= flight.airline %></td>
-          <td><%= flight.airport %></td>
-          <td><a href="/flights/<%= flight._id %>"><%= flight.flightNo %></a></td>
-          <td><%= flight.departs %></td>
+          <td><a href="/flights/<%= flight._id %>">Details</a></td>
+          <td><%= flight.flightNo %></td>
+          <td><%= flight.departs.toLocaleDateString() %></td>
         </tr>
       <% }) %>
     </tbody>

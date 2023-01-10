@@ -14,7 +14,7 @@
       Flight Number: <%= flight.flightNo %>
     </li>
     <li>
-      Departure Date: <%= flight.departs %>
+      Departure Date: <%= flight.departs.toLocaleDateString() %>
     </li>
   </ul>
   <a href="/flights/<%= flight._id %>/edit">Edit Flight</a>
