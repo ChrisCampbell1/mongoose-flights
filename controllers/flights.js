@@ -52,6 +52,37 @@ function show(req, res) {
       title: "Flight Details"
     })
   })
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function edit(req, res) {
+  Flight.findById(req.params.id)
+  .then(flight => {
+    res.render('flights/edit', {
+      flight,
+      title: "Edit Flight Details"
+    })
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/')
+  })
+}
+
+function update(req, res) {
+  console.log(req.body)
+  if (req.body.departs === '') delete req.body.departs
+  Flight.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  .then(flight => {
+    res.redirect(`/flights/${req.params.id}`)
+  })
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/')
+  })
 }
 
 export {
@@ -59,5 +90,7 @@ export {
   create,
   index,
   deleteFlight as delete,
-  show
+  show,
+  edit,
+  update
 }
