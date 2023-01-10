@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1><%= title %></h1>
+  <ul>
+    <li>
+      Airline: <%= flight.airline %>
+    </li>
+    <li>
+      Airport: <%= flight.airport %>
+    </li>
+    <li>
+      Flight Number: <%= flight.flightNo %>
+    </li>
+    <li>
+      Departure Date: <%= flight.departs %>
+    </li>
+  </ul>
+  <a href="">Edit Flight</a>
+</main>
+
+<%- include("../partials/footer") %>
