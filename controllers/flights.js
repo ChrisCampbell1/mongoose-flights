@@ -74,9 +74,13 @@ function edit(req, res) {
 
 function update(req, res) {
   console.log(req.body)
-  for (let key in req.body) {
-    if (req.body[key] === '') delete req.body[key]
+  if(req.body.departs === ""){
+    let date = new Date()
+    let oneYearFromNow = date.getFullYear() + 1
+    date.setFullYear(oneYearFromNow)
+    req.body.departs = date
   }
+  console.log(req.body)
   Flight.findByIdAndUpdate(req.params.id, req.body, {new: true})
   .then(flight => {
     console.log(flight)
