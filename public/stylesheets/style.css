@@ -146,3 +146,23 @@ form > button {
 a {
   color: #00b7ff;
 }
+
+form#delete {
+  grid-column: span 1;
+  width: 75px;
+}
+
+.delete-btn {
+  border-radius: 4px;
+  background-color: #b8c0c2;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  color: red;
+  border: 0;
+  width: auto;
+}
+.delete-btn:hover {
+  background-color: white;
+  cursor: pointer;
+}
