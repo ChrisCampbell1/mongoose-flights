@@ -147,7 +147,7 @@ a {
   color: #00b7ff;
 }
 
-form#delete {
+form.delete {
   grid-column: span 1;
   width: 75px;
 }
