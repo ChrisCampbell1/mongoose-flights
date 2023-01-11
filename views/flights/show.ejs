@@ -18,6 +18,13 @@
     </li>
   </ul>
   <a href="/flights/<%= flight._id %>/edit">Edit Flight</a>
+  <form action="/flights/<%= flight._id %>/tickets" method="POST">
+    <label for="seat-input">Seat:</label>
+    <input type="text" id="seat-input" name="seat">
+    <label for="price-input">Price:</label>
+    <input type="number" name="price" id="price-input">
+    <button type="submit">Add Ticket</button>
+  </form>
 </main>
 
 <%- include("../partials/footer") %>
