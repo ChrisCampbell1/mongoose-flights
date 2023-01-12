@@ -17,7 +17,24 @@
       Departure Date: <%= flight.departs.toLocaleDateString() %>
     </li>
   </ul>
+  Available meals:
+  <ul>
+    <% flight.meals.forEach(meal => { %>
+    <li><%= meal.name %></li>
+    <% }) %>
+  </ul>
   <a href="/flights/<%= flight._id %>/edit">Edit Flight</a>
+  <h2>Add a Meal</h2>
+  <form action="/flights/<%= flight._id %>/meals" method="POST">
+    <label for="meal-input">Select Meal:</label>
+    <select name="mealId" id="meal-input">
+    <% meals.forEach(meal => { %>
+      <option value="<%= meal._id %>"><%= meal.name %></option>
+    <% }) %>
+    </select>
+    <button type="submit">Add Meal</button>
+  </form>
+  <h2>Add a Ticket</h2>
   <form action="/flights/<%= flight._id %>/tickets" method="POST">
     <label for="seat-input">Seat:</label>
     <input type="text" id="seat-input" name="seat">
