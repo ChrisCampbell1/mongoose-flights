@@ -3,11 +3,18 @@
 
 <main>
   <h1><%= title %></h1>
+  <p>Check list of meals before saving a new meal.</p>
   <form action="/meals" method="post">
     <label for="name-input">Meal Name:</label>
     <input type="text" name="name" id="name-input">
     <button type="submit">Save Meal</button>
   </form>
+  <h2>Existing Meals</h2>
+  <ul>
+    <% meals.forEach(meal => { %>
+    <li><%= meal.name %></li>
+    <% }) %>
+  </ul>
 </main>
 
 <%- include("../partials/footer") %>
